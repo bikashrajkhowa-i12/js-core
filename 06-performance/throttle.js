@@ -13,7 +13,6 @@ function throttle(fn, delay) {
     if (now - lastCall < delay) return;
     else {
       lastCall = now;
-      //fn.call(this, ...args); //incase of  class
       return fn(...args);
     }
   };
