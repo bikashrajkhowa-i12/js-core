@@ -1,0 +1,79 @@
+# ⏱️ Debounce vs Throttle (JavaScript)
+
+Both **debounce** and **throttle** are techniques used to **limit how often a function runs**, especially when dealing with events that fire frequently (like scroll, resize, keypress, etc).
+
+---
+
+# ✅ Debounce
+
+### 🔹 Definition
+Debounce ensures a function is **only called after a certain amount of time has passed since the last event**.
+
+### 🔑 Key Idea
+> **Wait until the user stops performing the action.**
+
+### 📌 Use cases
+- Search input (API call after typing stops)
+- Auto-save after typing stops
+- Form validation
+
+### 🧠 Behavior
+- If the event keeps firing, the timer keeps resetting
+- Function runs **only once**, after the events stop
+
+### ⚙️ Example
+```js
+function debounce(fn, delay) {
+  let timer;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+
+
+# ⏳ Throttle (JavaScript)
+
+## ✅ Definition
+Throttle ensures a function is **only called at most once every fixed interval**, regardless of how many times the event fires.
+
+## 🔑 Key Idea
+> **Run the function at regular intervals.**
+
+## 📌 Use Cases
+- Scroll event (update UI every 100ms)
+- Window resize (calculate layout periodically)
+- Button click prevention (rate limiting)
+- API rate limiting
+
+## 🧠 Behavior
+- Executes immediately (depending on implementation)
+- Blocks subsequent calls until the interval passes
+- Ensures **consistent execution rate**
+
+## ⚙️ Example (Basic)
+```js
+function throttle(fn, delay) {
+  let lastCall = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      fn.apply(this, args);
+    }
+  };
+}
+```
+
+## 🔍 Notes
+- If the event keeps firing, the function runs **once per interval**.
+- Throttle is ideal when you want **continuous but limited updates**.
+
+## 🧠 Quick Comparison (with Debounce)
+| Feature | Throttle | Debounce |
+|--------|----------|----------|
+| Runs at regular intervals? | ✅ Yes | ❌ No |
+| Runs after events stop? | ❌ No | ✅ Yes |
+| Best for | Scroll, resize | Search input |
+| Execution pattern | Multiple executions | Single execution |
