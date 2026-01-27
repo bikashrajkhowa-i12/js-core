@@ -74,7 +74,7 @@ js-core/
 ├── 03-prototypal-js/   # Prototype Chain, Prototypal Inheritance vs. Class-based syntax, and Shadowing.
 ├── 04-async-architecture/        # event loop, promises, async/await
 ├── 05-dom/             # DOM, events, rendering
-├── 06-performance/     # optimization patterns
+├── 06-performance/     # optimization patterns && polyfils
 ├── notes/           # concise interview-ready notes
 └── README.md
 ```

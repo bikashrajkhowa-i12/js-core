@@ -1,6 +1,7 @@
 # 🧩 Design Patterns — Quick Notes
 
 ## 📌 What are Design Patterns?
+
 A **design pattern** is a **proven, reusable solution** to a **recurring design problem** in software development.
 
 Design patterns are **not code**, but **guidelines / blueprints** for structuring code in a clean, scalable, and maintainable way.
@@ -8,8 +9,9 @@ Design patterns are **not code**, but **guidelines / blueprints** for structurin
 ---
 
 ## 🛠️ Analogy (Easy to Remember)
-- **JavaScript syntax** → knowing how to use a *hammer and a saw*
-- **Design patterns** → architectural *blueprints* for building a house so it **doesn’t fall down when the wind blows**
+
+- **JavaScript syntax** → knowing how to use a _hammer and a saw_
+- **Design patterns** → architectural _blueprints_ for building a house so it **doesn’t fall down when the wind blows**
 
 > Syntax helps you write code.  
 > Design patterns help you write **good, robust code**.
@@ -17,39 +19,47 @@ Design patterns are **not code**, but **guidelines / blueprints** for structurin
 ---
 
 ## 👀 Observer Pattern
+
 **Definition:**  
 Defines a **one-to-many relationship** between objects.
 
 When the **Subject** changes state, all **Observers** are **notified automatically**.
 
 ### 🔑 Core Idea
+
 > “Don’t poll for changes — get notified.”
 
 ### 🧠 Examples
+
 - Event listeners in JavaScript
 - `addEventListener`
 - RxJS Observables
 - Pub/Sub systems
 
 ### 📌 When to Use
+
 - Multiple components depend on the same data
 - You want **loose coupling** between objects
 
 ---
 
 ## 📦 Module Pattern
+
 **Definition:**  
 Encapsulates code into a **self-contained module**, exposing only what is necessary while hiding internal details.
 
 ### 🔑 Core Idea
+
 > “Expose what’s needed, hide the rest.”
 
 ### 🧠 Examples
+
 - Node.js modules (`require`, `import`)
 - ES Modules
 - IIFE-based modules
 
 ### 📌 Benefits
+
 - Avoids global scope pollution
 - Improves maintainability
 - Clear public API
@@ -57,25 +67,30 @@ Encapsulates code into a **self-contained module**, exposing only what is necess
 ---
 
 ## 🧍 Singleton Pattern
+
 **Definition:**  
 Ensures a class has **only one instance** and provides a **global access point** to that instance.
 
 ### 🔑 Core Idea
+
 > “One class, one instance.”
 
 ### 🧠 Examples
+
 - Database connection
 - Logger
 - Configuration manager
 - Cache manager
 
 ### 📌 When to Use
+
 - Multiple instances can cause conflicts or bugs
 - Shared state is required across the application
 
 ---
 
 ## 🧠 One-Line Revision Summary
+
 - **Observer** → Notify many when one changes
 - **Module** → Encapsulation and privacy
 - **Singleton** → Exactly one instance

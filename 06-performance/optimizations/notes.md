@@ -7,22 +7,27 @@ Both **debounce** and **throttle** are techniques used to **limit how often a fu
 # ✅ Debounce
 
 ### 🔹 Definition
+
 Debounce ensures a function is **only called after a certain amount of time has passed since the last event**.
 
 ### 🔑 Key Idea
+
 > **Wait until the user stops performing the action.**
 
 ### 📌 Use cases
+
 - Search input (API call after typing stops)
 - Auto-save after typing stops
 - Form validation
 
 ### 🧠 Behavior
+
 - If the event keeps firing, the timer keeps resetting
 - Function runs **only once**, after the events stop
 
 ### ⚙️ Example
-```js
+
+````js
 function debounce(fn, delay) {
   let timer;
   return function (...args) {
@@ -64,16 +69,18 @@ function throttle(fn, delay) {
     }
   };
 }
-```
+````
 
 ## 🔍 Notes
+
 - If the event keeps firing, the function runs **once per interval**.
 - Throttle is ideal when you want **continuous but limited updates**.
 
 ## 🧠 Quick Comparison (with Debounce)
-| Feature | Throttle | Debounce |
-|--------|----------|----------|
-| Runs at regular intervals? | ✅ Yes | ❌ No |
-| Runs after events stop? | ❌ No | ✅ Yes |
-| Best for | Scroll, resize | Search input |
-| Execution pattern | Multiple executions | Single execution |
+
+| Feature                    | Throttle            | Debounce         |
+| -------------------------- | ------------------- | ---------------- |
+| Runs at regular intervals? | ✅ Yes              | ❌ No            |
+| Runs after events stop?    | ❌ No               | ✅ Yes           |
+| Best for                   | Scroll, resize      | Search input     |
+| Execution pattern          | Multiple executions | Single execution |
