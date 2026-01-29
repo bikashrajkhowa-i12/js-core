@@ -62,6 +62,19 @@ let obj = {
 
 obj.regular(); // Hi Bikash \n  regular.arrow: Bikash
 obj.arrow(); // Hi undefined
+
+let inside;
+let outside = globalThis; // this is false here because in Node js globalThis is the entire object, but inside module this === module.exports
+function test2() {
+  const b = () => {
+    inside = this;
+  };
+  b();
+}
+
+test2();
+console.log(inside === outside);
+
 /**
  * What JS sees is:
  *
