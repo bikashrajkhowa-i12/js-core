@@ -1,29 +1,27 @@
 const nums = [60, 400, 101, 50, 290, 32];
-console.log("Original nums: ", nums);
 
-/* [].sort()
-    - lexiological sort if no arguments passed
-    - sort() only converts elements to strings temporarily during comparison.
-    - input: [60, 400, 101, 50, 290, 32]
-    - output: [ 101, 290, 32, 400, 50, 60 ] ---> "1.." ,"2..", "3..." ... etc
-*/
-console.log("Lexiologically sorted (default): ", nums.sort());
+console.log("Original:", nums);
 
-/* [].sort(a,b => a-b)
-    - ascending
+/*
+Array.prototype.sort()
+
+• Mutates original array
+• Returns same reference
+• Default: lexicographical (string-based)
+• Temporary string coercion during comparison
+• Stable since ES2019
 */
+
+console.log("Lexicographical:", [...nums].sort());
+
 console.log(
-  "Sorted nums(ascending): ",
-  nums.sort((a, b) => a - b),
+  "Ascending:",
+  [...nums].sort((a, b) => a - b),
 );
 
-/* [].sort(a,b => b-a)
-    - descending
-*/
-
 console.log(
-  "Sorted nums(descending): ",
-  nums.sort((a, b) => b - a),
+  "Descending:",
+  [...nums].sort((a, b) => b - a),
 );
 
 /* [].sort((a,b) => ...)
@@ -39,10 +37,24 @@ const nestedArray = [
 ];
 console.log(
   "Sorted nested arrays: ",
-  nestedArray.sort((a, b) => {
+  [...nestedArray].sort((a, b) => {
     for (let i = 0; i < Math.min(a.length, b.length); i++) {
       if (a[i] !== b[i]) return a[i] - b[i];
     }
     return a.length - b.length;
   }),
 );
+
+/*********** Strings **********/
+const strArray = [
+  "zebra",
+  "xylophone",
+  "banana",
+  "icecream",
+  "apple",
+  "iceland",
+];
+
+console.log("Original string array: ", strArray);
+
+console.log("Sorted string array: ", strArray.sort());
