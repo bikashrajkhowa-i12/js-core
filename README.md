@@ -1,7 +1,5 @@
 # js-core
 
-> **Core JavaScript fundamentals and internals — no fluff, no frameworks.**
-
 This repository is a **from-scratch, interview-grade deep dive** into JavaScript. It focuses on _how JS actually works_ under the hood: execution model, async behavior, DOM mechanics, and performance patterns. Everything here is written to build **first-principles clarity**.
 
 ---
